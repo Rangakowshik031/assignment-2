@@ -1,0 +1,39 @@
+<html>
+
+<head><title>This is create</title></head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<body>
+
+    <center>
+<h1>Insert new Student/Faculty Publication</h1>
+<form method="POST">
+    {% csrf_token %}
+
+    <div class="container">
+        <div class="form-group">
+            <label>Name:</label>
+            <input type="text" class="form-control" name="sname">
+        </div>
+
+        <div class="form-group">
+            <label>Title:</label>
+            <input type="text" class="form-control" name="smobile">
+        </div>
+
+        <div class="form-group">
+            <label>Year of Publication</label>
+            <input type="text" class="form-control" name="saddress">
+        </div>
+<input type="submit" value="Insert record">
+</form>
+{% if messages%}
+{% for res in messages %}
+{{res}}
+{% endfor %}
+{% endif %}
+<a href="{% url 'display'%}"> Display Record</a>
+    </center>
+</body>
+</html>
