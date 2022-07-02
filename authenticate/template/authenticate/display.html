@@ -1,0 +1,32 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+<html>
+<head>
+
+</head>
+<body>
+
+<center>
+    <h1> Student/Faculty PAPER PUBLICATIONS</h1>
+    <a href="{% url 'insert'%}"> Add Record</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Faculty/Student Name</th>
+            <th colspan="4">Title </th>
+            <th>Year of Publish</th>
+        </tr>
+        {% for res in stud %}
+        <tr>
+            <td>{{res.id}}</td>
+            <td>{{res.sname}}</td>
+            <td colspan="4">{{res.smobile}}</td>
+            <td>{{res.saddress}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+</body>
+</html>
+{% endblock %}
